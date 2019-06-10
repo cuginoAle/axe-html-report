@@ -27,7 +27,7 @@ module.exports = function (data) {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Paxe: accessibility Report for ${title}</title>    
+    <title>${title}</title>    
     <style>
       ${styles}
     </style>

@@ -1,0 +1,19 @@
+{
+  "name": "axe_html_report",
+  "version": "0.0.1",
+  "description": "An html reports generator for AXE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "axe",
+    "report",
+    "accessibility"
+  ],
+  "author": "Alessio Carnevale",
+  "license": "ISC",
+  "dependencies": {
+    "htmlencode": "0.0.4"
+  }
+}

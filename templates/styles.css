@@ -1,60 +1,71 @@
 body {
-  margin: 20px;
-  padding: 0;
   background-color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 22px;
-  color: #333;
+  color           : #333;
+  font-family     : Arial, Helvetica, sans-serif;
+  font-size       : 16px;
+  line-height     : 22px;
+  margin          : 20px;
+  padding         : 0;
 }
 
 .page_url {
-  font-size: 12px;
-  margin-bottom: 20px;
-  display: inline-block;
+  background-color: #d3e2ef;
+  border-radius   : 30px;
+  color           : #414a52;
+  display         : inline-block;
+  font-size       : 14px;
+  margin-bottom   : 50px;
+  padding         : 6px 16px;
+  text-decoration : none;
 }
 
 @media screen and (min-width: 1024px){
   main {
-    display: flex;
+    display        : flex;
     justify-content: space-between;
   }
-
+  
   .issues_list,
   .screenshot {
-    width: 48%;
+    width: 49%;
   }
 }
 
+.issues_list-violations{
+  margin-bottom: 80px
+}
+
 .screenshot img{
-  display: block;
-  max-width: 100%;
+  display   : block;
+  max-width : 100%;
+  margin    : auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 /* ISSUE */
 .issue {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  padding: 20px 20px 0px 20px;
+  box-shadow   : 0 1px 3px rgba(0,0,0,0.3);
+  padding      : 20px 20px 0px 20px;
   margin-bottom: 20px;
 }
 .issue_description{
-  font-weight: bold;
+  font-weight  : bold;
   margin-bottom: 20px;
 }
 .issue_help a{
-  display: inline-block;
-  font-size: 14px;
+  display        : inline-block;
+  font-size      : 14px;
   text-decoration: none;
-  color: rgb(62, 62, 102);
-  border-bottom: 1px dotted rgba(0,0,0,0.5);
+  color          : rgb(62, 62, 102);
+  border-bottom  : 1px dotted rgba(0,0,0,0.5);
 }
 .issue_help a span{
-  display: flex;
+  display    : flex;
   align-items: center;
 }
 .issue_help .fa-question-circle{
   margin-right: .5em;
-  font-size: 1.2em;
+  font-size   : 1.2em;
 }
 
 /* LOGO */
@@ -62,7 +73,7 @@ body {
   margin-bottom: 50px;
 }
 .logo p {
-  margin: 0;
+  margin     : 0;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -70,7 +81,7 @@ body {
 /* TARGET */
 .target{
   padding-bottom: 20px;
-  margin-bottom: 10px;
+  margin-bottom : 10px;
 }
 
 .target:not(:last-child){
@@ -80,46 +91,60 @@ body {
 .target_summary {
   margin-top: 20px;
 }
+.target_summary li {
+  font-size: 14px;
+  margin-bottom: .5em;
+}
+
 .target_html {
   background-color: rgb(241, 250, 246);
-  padding: 10px;
+  padding         : 10px;
 
   font-family: 'Courier New', Courier, monospace;
-  font-size: 12px;
+  font-size  : 12px;
 
   word-wrap: break-word;
 }
 
 .target_impact{
   border-radius: 3px;
-  padding: 2px 10px;
-  display: inline-block;
-  font-size: 12px;
+  padding      : 2px 10px;
+  display      : inline-block;
+  font-size    : 12px;
 }
 
 .target_impact-critical{
   background-color: rgb(230, 0, 0);
-  color: white;
+  color           : white;
 }
 
 .target_impact-serious{
   background-color: rgb(255, 145, 0);
-  color: white;
+  color           : white;
 }
 
 .target_impact-moderate{
   background-color: rgb(255, 230, 0);
-  color: black;
+  color           : black;
 }
 
 .target_impact-minor{
-  border:1px solid rgb(255, 145, 0);
-  color: rgb(255, 145, 0);
+  border: 1px solid rgb(255, 145, 0);
+  color : rgb(255, 145, 0);
+}
+
+.target_indeterminate {
+  font-style: italic;
 }
 
 svg {
   display: inline-block;
-  color:inherit;
-  width: 1em;
-  height: 1em;
+  color  : inherit;
+  width  : 1em;
+  height : 1em;
+}
+
+h2 small {
+  font-size: 12px;
+  font-weight: normal;
 }

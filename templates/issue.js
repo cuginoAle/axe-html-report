@@ -10,6 +10,7 @@ module.exports = function (data) {
     help,
     helpUrl,
     tags,
+    isIncomplete,
     nodes
   } = data
 
@@ -20,7 +21,7 @@ module.exports = function (data) {
       <div class="issue_help"><a href="${helpUrl}" target="_blank"><span>${questionMark}${htmlencode.htmlEncode(help)}</span></a></div>
     </div>
     <div class="issue_nodes">
-      ${nodes.map(t => target(t)).join('')}
+      ${nodes.map(t => target({...t, isIncomplete})).join('')}
     </div>
   </section>
   `

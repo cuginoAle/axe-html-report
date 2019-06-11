@@ -6,14 +6,52 @@ module.exports = function (data) {
     impact,
     html,
     target,
-    failureSummary
+    failureSummary,
+    isIncomplete
   } = data
 
   return `  
   <div class="target">
     <p class="target_impact target_impact-${impact}">${impact}</p>
     <div class="target_html">${htmlencode.htmlEncode(html)}</div>
-    <div class="target_summary">${htmlencode.htmlEncode(failureSummary)}</div>
+    ${failureSummary ? `<div class="target_summary">${toUl(failureSummary)}</div>` : ''}
+    ${isIncomplete ? getExtraData(data) : ''}
   </div>
   `
 }
+
+
+function toUl(summary){
+
+  const li = summary.split('\n').map(e => htmlencode.htmlEncode(e))
+
+  return `
+    <p>${li.shift()}</p>
+    <ul>
+      ${li.map(e => `<li>${e}</li>`).join('')}
+    </ul>
+  `
+}
+
+function getExtraData(data){
+  return [
+    ...data.any,
+    ...data.all,
+    ...data.none
+  ].map(d => (`
+    <p class="target_indeterminate">(${d.impact}) - ${d.message}</p>
+
+    ${d.relatedNodes.length ?
+      `<div>
+        <h4>Related:</h4>
+        <ul>
+          ${d.relatedNodes.map(r => (`
+            <li>${r.target} - ${r.html}</li>
+          `)).join('')}
+        </ul>
+      </div>`
+      :
+      ''
+    }
+  `)).join('')
+  }

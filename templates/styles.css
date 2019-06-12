@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
   color           : #333;
-  font-family     : Arial, Helvetica, sans-serif;
+  font-family     : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size       : 16px;
   line-height     : 22px;
   margin          : 20px;
@@ -14,9 +14,19 @@ body {
   color           : #414a52;
   display         : inline-block;
   font-size       : 14px;
-  margin-bottom   : 50px;
   padding         : 6px 16px;
   text-decoration : none;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  margin-bottom   : 50px;
+}
+.timeStamp {
+  font-size: 12px;
+  color: grey;
+  margin-left: 20px;
 }
 
 @media screen and (min-width: 1024px){
@@ -35,10 +45,15 @@ body {
   margin-bottom: 80px
 }
 
+.screenshot{
+  display: flex;
+}
+.screenshot a{
+  margin: 0 auto;
+}
 .screenshot img{
   display   : block;
   max-width : 100%;
-  margin    : auto;
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 

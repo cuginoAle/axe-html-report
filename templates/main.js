@@ -29,9 +29,12 @@ module.exports = function (data) {
     <header>
       <div ${logo && `class="logo"`}>
         ${logo}
-      </div>
+      </div>            
       <h1>${title}</h1>
-      <a class="page_url" href="${url}" target="_blank">${url}</a>
+      <div class='subtitle'>
+        <a class="page_url" href="${url}" target="_blank">${url}</a>
+        <p class='timeStamp'>${(new Date()).toLocaleDateString()} - ${(new Date()).toLocaleTimeString()}</p>
+      </div>
     </header>
     <main>
       <div class="issues_list">

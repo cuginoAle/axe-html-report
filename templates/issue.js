@@ -1,6 +1,7 @@
 const target = require('./target')
-const {books, questionMark} = require('./svg_icons')
+const {questionMark} = require('./svg_icons')
 const htmlencode = require('htmlencode');
+
 
 module.exports = function (data) {
 
@@ -17,7 +18,15 @@ module.exports = function (data) {
   return `  
   <section class="issue">
     <div class="issue_details">
-      <div class="issue_description">${htmlencode.htmlEncode(description)}</div>
+      
+    <div class="issue_description">
+        ${htmlencode.htmlEncode(description)}
+      </div>
+      
+      <ul class="issue_tags">
+        ${tags.map(tag => (`<li>${tag}</li>`)).join('')}
+      </ul>
+      
       <div class="issue_help"><a href="${helpUrl}" target="_blank"><span>${questionMark}${htmlencode.htmlEncode(help)}</span></a></div>
     </div>
     <div class="issue_nodes">

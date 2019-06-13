@@ -13,7 +13,7 @@ module.exports = function (data) {
   return `  
   <div class="target">
     <p class="target_impact target_impact-${impact}">${impact}</p>
-    <div class="target_html">${htmlencode.htmlEncode(html)}</div>
+    <div class="target_html html_code">${htmlencode.htmlEncode(html)}</div>
     ${failureSummary ? `<div class="target_summary">${toUl(failureSummary)}</div>` : ''}
     ${isIncomplete ? getExtraData(data) : ''}
   </div>
@@ -46,7 +46,12 @@ function getExtraData(data){
         <h4>Related:</h4>
         <ul>
           ${d.relatedNodes.map(r => (`
-            <li>${r.target} - ${r.html}</li>
+            <li>
+              <span>${r.target}</span>
+              <div class="html_code">
+                ${htmlencode.htmlEncode(r.html)}
+              </div>
+            </li>
           `)).join('')}
         </ul>
       </div>`

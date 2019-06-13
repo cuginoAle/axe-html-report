@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  color           : #333;
+  color           : rgb(63, 79, 93);
   font-family     : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size       : 16px;
   line-height     : 22px;
@@ -19,13 +19,13 @@ body {
 }
 
 .subtitle {
-  display: flex;
-  align-items: center;
-  margin-bottom   : 50px;
+  display      : flex;
+  align-items  : center;
+  margin-bottom: 50px;
 }
 .timeStamp {
-  font-size: 12px;
-  color: grey;
+  font-size  : 12px;
+  color      : grey;
   margin-left: 20px;
 }
 
@@ -46,7 +46,8 @@ body {
 }
 
 .screenshot{
-  display: flex;
+  display    : flex;
+  align-items: flex-start;
 }
 .screenshot a{
   margin: 0 auto;
@@ -82,6 +83,22 @@ body {
   margin-right: .5em;
   font-size   : 1.2em;
 }
+.issue_tags {
+  list-style-type: none;
+  margin         : 0;
+  padding        : 0;
+  display        : flex;
+  justify-content: flex-end;
+}
+
+.issue_tags li {
+  font-size       : 12px;
+  margin-left     : 1em;
+  padding         : 0em .5em;
+  background-color: #d3e2ef;
+  border-radius   : 3px;
+  color           : rgb(63, 79, 93);
+}
 
 /* LOGO */
 .logo {
@@ -107,18 +124,8 @@ body {
   margin-top: 20px;
 }
 .target_summary li {
-  font-size: 14px;
+  font-size    : 14px;
   margin-bottom: .5em;
-}
-
-.target_html {
-  background-color: rgb(241, 250, 246);
-  padding         : 10px;
-
-  font-family: 'Courier New', Courier, monospace;
-  font-size  : 12px;
-
-  word-wrap: break-word;
 }
 
 .target_impact{
@@ -160,6 +167,16 @@ svg {
 }
 
 h2 small {
-  font-size: 12px;
+  font-size  : 12px;
   font-weight: normal;
+}
+
+.html_code {
+  background-color: rgb(241, 250, 246);
+  padding         : 10px;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-size  : 12px;
+
+  word-wrap: break-word;
 }

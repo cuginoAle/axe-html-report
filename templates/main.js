@@ -1,6 +1,6 @@
 const issue = require('./issue.js')
 const fs = require('fs')
-var path = require('path');
+var path = require('path')
 
 const stylesPath = path.resolve(__dirname, './styles.css')
 const styles = fs.readFileSync(stylesPath)
@@ -10,7 +10,7 @@ module.exports = function (data) {
     logo,
     title,
     issues,
-    incomplete,
+    incomplete = '',
     screenshot,
     url
   } = data
@@ -40,13 +40,15 @@ module.exports = function (data) {
       <div class="issues_list">
         <div class="issues_list-violations">
           <h2>Violations:</h2>
-          ${issues.map(i => issue({...i, isIncomplete:false})).join('')}
+          ${issues.map(i => issue({ ...i, isIncomplete: false })).join('')}
         </div>
 
-        <div class="issues_list-indeteminate">
-          <h2>Indeterminate: <small>Need manual review</small></h2>          
-          ${incomplete.map(i => issue({...i, isIncomplete:true})).join('')}
+        
+        <div class='issues_list-indeteminate'>
+          <h2>Indeterminate: <small>Need manual review</small></h2>
+            ${incomplete && incomplete.map(i => issue({ ...i, isIncomplete: true })).join('')}
         </div>
+
         
       </div>
       <div class="screenshot">

@@ -1,7 +1,6 @@
-const htmlencode = require('htmlencode');
+const htmlencode = require('htmlencode')
 
 module.exports = function (data) {
-
   const {
     impact,
     html,
@@ -20,20 +19,21 @@ module.exports = function (data) {
   `
 }
 
+function toUl (summary) {
+  return summary.split('Fix ').map((el, i) => {
+    if (i === 0) return ''
+    const li = `Fix ${el}`.split('\n').filter(el => el !== '').map(el => htmlencode.htmlEncode(el))
 
-function toUl(summary){
-
-  const li = summary.split('\n').map(e => htmlencode.htmlEncode(e))
-
-  return `
-    <p>${li.shift()}</p>
-    <ul>
-      ${li.map(e => `<li>${e}</li>`).join('')}
-    </ul>
-  `
+    return `
+      <p>${li.shift()}</p>
+      <ul>
+        ${li.map(e => `<li>${e}</li>`).join('')}
+      </ul>
+    `
+  }).join('')
 }
 
-function getExtraData(data){
+function getExtraData (data) {
   return [
     ...data.any,
     ...data.all,
@@ -41,8 +41,8 @@ function getExtraData(data){
   ].map(d => (`
     <p class="target_indeterminate">(${d.impact}) - ${d.message}</p>
 
-    ${d.relatedNodes.length ?
-      `<div>
+    ${d.relatedNodes.length
+      ? `<div>
         <h4>Related:</h4>
         <ul>
           ${d.relatedNodes.map(r => (`
@@ -55,8 +55,7 @@ function getExtraData(data){
           `)).join('')}
         </ul>
       </div>`
-      :
-      ''
+      : ''
     }
   `)).join('')
-  }
+}
